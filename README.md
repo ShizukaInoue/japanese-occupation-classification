@@ -23,9 +23,6 @@ The Japanese Occupation Sector Classification system uses a combination of patte
 │           ├── prediction.py           # Prediction utilities
 │           ├── preprocessing.py        # Text preprocessing utilities
 │           └── training.py             # Model training utilities
-├── data/
-│   ├── sample_data.xlsx               # Sample data with occupation titles and sectors
-│   └── results.xlsx                   # Classification results
 └── README.md                          # This file
 ```
 
