@@ -1,24 +1,23 @@
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!README.md
+!requirements.txt
+!setup.py
+
+# And not the Code directory...
+!Code/
+!Code/**/*.py
+!Code/japanese_occupation_classifier/
+!Code/japanese_occupation_classifier/**/*.py
+!Code/japanese_occupation_classifier/__init__.py
+
+# Still ignore Python cache even in Code directory
+**/__pycache__/
+**/*.py[cod]
+**/*.so
 
 # Virtual Environment
 venv/
@@ -30,10 +29,6 @@ ENV/
 .vscode/
 *.swp
 *.swo
-
-# Jupyter Notebook
-.ipynb_checkpoints
-*.ipynb
 
 # Model files and data
 models/

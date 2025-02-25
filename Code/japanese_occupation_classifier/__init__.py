@@ -1,4 +1,3 @@
-from .main import train_and_evaluate
 from .utils.preprocessing import preprocess_text
 from .utils.data_processing import create_tensor_dataset, augment_data
 from .utils.training import train_model_fold, cross_validate_model_with_majority_vote
@@ -9,7 +8,6 @@ __version__ = "1.0.0"
 __author__ = "Shizuka Inoue"
 
 __all__ = [
-    'train_and_evaluate',
     'preprocess_text',
     'create_tensor_dataset',
     'augment_data',

@@ -1,30 +1,63 @@
-# Japanese Occupation Classifier
+# Japanese Occupation Sector Classification
 
-A machine learning project for classifying Japanese occupations into sectors using BERT and pattern matching.
+This project classifies Japanese occupation titles into economic sectors (Primary, Secondary, Tertiary) using pattern matching and BERT models.
 
-## Project Structure
+## Project Overview
+
+The Japanese Occupation Sector Classification system uses a combination of pattern matching and deep learning to categorize occupation titles into three main economic sectors:
+
+1. **Primary Sector**: Agriculture, forestry, fishing, mining, and other resource extraction activities
+2. **Secondary Sector**: Manufacturing, construction, and other industrial activities
+3. **Tertiary Sector**: Services, including retail, education, healthcare, and other service-oriented activities
+
+## Repository Structure
 
 ```
-Code/
-├── japanese_occupation_classifier/
-│   ├── __init__.py
-│   ├── main.py
-│   └── utils/
-│       ├── data_processing.py
-│       ├── pattern_matching.py
-│       ├── prediction.py
-│       ├── preprocessing.py
-│       └── training.py
+.
+├── Code/
+│   └── japanese_occupation_classifier/
+│       ├── main.py                     # Main script for training and prediction
+│       └── utils/
+│           ├── data_processing.py      # Data processing utilities
+│           ├── pattern_matching.py     # Pattern matching for occupation classification
+│           ├── prediction.py           # Prediction utilities
+│           ├── preprocessing.py        # Text preprocessing utilities
+│           └── training.py             # Model training utilities
+├── data/
+│   ├── sample_data.xlsx               # Sample data with occupation titles and sectors
+│   └── results.xlsx                   # Classification results
+└── README.md                          # This file
 ```
 
-## Features
+## Getting Started
 
-- Text preprocessing optimized for Japanese occupation names
-- Pattern-based initial classification system
-- BERT-based deep learning model (using cl-tohoku/bert-base-japanese-v3)
-- Cross-validation with majority voting
-- Confidence scoring for predictions
-- Hierarchical classification (Primary/Secondary/Tertiary sectors)
+### Installation
+
+1. Clone this repository
+2. Install the required packages:
+   ```
+   pip install torch transformers pandas scikit-learn joblib
+   ```
+
+### Training and Classification Workflow
+
+The main workflow uses pattern matching for initial classification, followed by BERT model training:
+
+```bash
+python -m japanese_occupation_classifier.main
+```
+
+This script:
+1. Loads and preprocesses data from `data/yourdata.xlsx.`
+2. Creates training data using pattern matching
+3. Trains BERT models using cross-validation
+4. Makes predictions on the entire dataset
+5. Saves the results to `data/results.xlsx`
+
+
+## Acknowledgments
+
+- This project uses the [cl-tohoku/bert-base-japanese-v3](https://huggingface.co/cl-tohoku/bert-base-japanese-v3) model from Hugging Face.
 
 ## Classification Categories
 
@@ -42,11 +75,6 @@ Code/
 - Office Work (general, clerical, management)
 - Commerce (retail, wholesale, business)
 - Professional Services (medical, education, technical)
-
-### Other
-- Unemployed (no work, unable to work)
-- Domestic (homemaker, family work)
-- Student (general, training)
 
 ## Usage
 
@@ -111,17 +139,6 @@ Code/
    - Ensemble prediction
    - Confidence calculation
    - Unknown category handling
-
-## Directory Structure Details
-
-- `main.py`: Main training and evaluation pipeline
-- `utils/`:
-  - `preprocessing.py`: Text preprocessing functions
-  - `pattern_matching.py`: Rule-based classification patterns
-  - `data_processing.py`: Dataset creation and augmentation
-  - `training.py`: Model training functions
-  - `prediction.py`: Prediction utilities
-
 
 ## 🌟 Key Features
 - **Multi-level Classification**: Hierarchical categorization into main sectors, subcategories, and detailed occupation groups
